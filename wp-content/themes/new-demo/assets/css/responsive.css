@@ -1,0 +1,244 @@
+@media (max-width: 767px) {
+    body .container {
+        padding: 0 20px;
+    }
+    .build-tag h3 {
+        font-size: 24px;
+    }
+
+    .slide-text-loop h2 {
+        font-size: 40px;
+    }
+
+    .link-banner {
+        display: none;
+    }
+    .title h2 {
+        font-size: 45px;
+        text-align: left;
+    }
+
+    .desc-title {
+        text-align: left !important;
+    }
+
+    .header-menu {
+        position: absolute;
+    }
+
+    .link-more {
+        text-align: left !important;
+    }
+
+    .item-srv {
+        max-width: 100%;
+        text-align: left !important;
+    }
+
+    .item-srv .icon {
+        justify-content: end;
+    }
+
+    section.box-started .title h2 {
+        text-align: center;
+    }
+
+    section.box-started .desc-title {
+        text-align: center !important;
+    }
+
+    section.box-started .link-more {
+        text-align: center !important;
+    }
+    section.box-team .col-md-7 {
+        order: 1;
+    }
+
+    section.box-team .col-md-5 {
+        order: 2;
+    }
+
+    .box-future {
+        padding-bottom: 100px;
+        padding-top: 0;
+    }
+
+    .box-video iframe {
+        height: 250px;
+    }
+
+    .box-video { 
+        margin-bottom: 30px;
+    }
+
+    .list-part ul li {
+        padding: 0 5px;
+        flex: 0 0 25%;
+    }
+
+    .list-part ul {
+        justify-content: center;
+    }
+
+    .list-part .item a {
+        width: 60px;
+        height: 60px;
+        padding: 10px;
+    }
+    .box-system .title {
+        margin-bottom: 50px;
+    }
+
+    .item-sys {
+        max-width: 100%;
+        text-align: left !important;
+    }
+
+    .list-system .col-md-6 {
+        margin-bottom: 50px;
+    }
+
+    .list-system .col-md-6:last-child {
+        margin-bottom: 0;
+    }
+
+    .form-subscribe input {
+        height: 100px;
+        font-size: 30px;
+        padding: 0 15px;
+    }
+    .link-ft .row {
+        display: block;
+        margin: 0;
+    }
+
+    .link-ft .col-fter {
+        margin-bottom: 50px;
+    }
+
+    .tearms a {
+        display: block;
+    }
+
+    .tearms a img {
+        display: block;
+        margin-bottom: 10px;
+    }
+
+    .tearms ul {
+        text-align: left;
+    }
+    main:before {
+        display: none;
+    }
+
+    main:after {
+        display: none;
+    }
+
+    .box-banner .anim-effect img {
+        width: 150px;
+    }
+
+    .text-loop {
+        min-height: 150px;
+    }
+
+    .content-build .anim-effect {
+        position: relative;
+        bottom: 0;
+        text-align: left !important;
+        margin-top: 50px;
+    }
+
+    .content-build .anim-effect img {
+        width: 110px;
+    }
+
+    .box-polkadot .anim-effect {
+        position: relative;
+        bottom: 0;
+        right: 0;
+        text-align: right !important;
+        padding-top: 40px;
+    }
+
+    .box-polkadot .anim-effect img {
+        width: 110px;
+    }
+
+    .box-polkadot {
+        padding: 50px 0;
+    }
+
+    .box-started {
+        margin: 0;
+    }
+
+    .box-service {
+        padding-bottom: 0;
+    }
+}
+@media (max-width: 767px) and (min-width: 576px) {
+    .text-loop {
+        height: 90px;
+    }
+
+    .btn-scroll {
+        bottom: 10px;
+    }
+
+    .link-ft .row {
+        margin: 0 -15px;
+        display: flex;
+    }
+
+    .link-ft .col-fter {
+        flex: 0 0  50%;
+        padding: 0 15px;
+    }
+
+    .content-footer {
+        margin-bottom: 0;
+    }
+} 
+
+@media (max-width: 1023px) and (min-width: 768px) {
+    .slide-text-loop h2 {
+        font-size: 65px;
+    }
+
+    .title h2 {
+        font-size: 50px;
+    }
+
+    .content-team h3 { 
+        font-size: 40px;
+    }
+
+    .content-team .col-md-5 {
+        order: 2;
+        max-width: 100%;
+        width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .content-team .col-md-7 {
+        order: 1;
+        max-width: 100%;
+        width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 50px;
+    }
+    .col-fter {
+        flex: 0 0 50%;
+        margin-bottom: 50px;
+    }
+
+    .content-footer {
+        margin-bottom: 0;
+    }
+    .content-build .anim-effect {
+        bottom: -300px;
+    }
+} 
