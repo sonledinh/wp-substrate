@@ -24,7 +24,7 @@
 				<?php
 				new_demo_posted_on();
 				new_demo_posted_by();
-				?>
+				?> 
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
 	</header><!-- .entry-header -->
