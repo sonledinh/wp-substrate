@@ -99,7 +99,7 @@ if ( ! function_exists( 'new_demo_setup' ) ) :
 				'width'       => 250,
 				'flex-width'  => true,
 				'flex-height' => true,
-			)
+			) 
 		);
 	}
 endif;
@@ -128,7 +128,7 @@ function new_demo_widgets_init() {
 			'name'          => esc_html__( 'Sidebar', 'new-demo' ),
 			'id'            => 'sidebar-1',
 			'description'   => esc_html__( 'Add widgets here.', 'new-demo' ),
-			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'before_widget' => '<section id="%1$s" class="widget %2$s 123">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',

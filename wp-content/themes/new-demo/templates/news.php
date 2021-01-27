@@ -1,92 +1,52 @@
 <?php /* Template Name: News */ ?>
 <?php get_header() ?>
-<main>
-	<section> 
-		<div class="container">
-			<div class="list-news">
-				<div class="item-news">
-					<div class="avarta"><a href=""><img src="http://tpl.gco.vn/free-azevent/images/new-1.jpg" class="img-fluid" alt=""></a></div>
-					<h3><a href="">LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.</a></h3>
-					<div class="desc">
-						Build a brand for your company using a specific color scheme and a professional logo designed with your business in mind. Keep it simple and memorable and use it everywhere. Signs, business cards, web sites, yellow page ads and any printed brochures should include your logo and company colors. Join trade associations and local organizations. […]
-					</div>
-				</div>
-				<div class="item-news">
-					<div class="avarta"><a href=""><img src="http://tpl.gco.vn/free-azevent/images/new-1.jpg" class="img-fluid" alt=""></a></div>
-					<h3><a href="">LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.</a></h3>
-					<div class="desc">
-						Build a brand for your company using a specific color scheme and a professional logo designed with your business in mind. Keep it simple and memorable and use it everywhere. Signs, business cards, web sites, yellow page ads and any printed brochures should include your logo and company colors. Join trade associations and local organizations. […]
-					</div>
-				</div>
-				<div class="item-news">
-					<div class="avarta"><a href=""><img src="http://tpl.gco.vn/free-azevent/images/new-1.jpg" class="img-fluid" alt=""></a></div>
-					<h3><a href="">LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.</a></h3>
-					<div class="desc">
-						Build a brand for your company using a specific color scheme and a professional logo designed with your business in mind. Keep it simple and memorable and use it everywhere. Signs, business cards, web sites, yellow page ads and any printed brochures should include your logo and company colors. Join trade associations and local organizations. […]
-					</div>
-				</div>
-				<div class="item-news">
-					<div class="avarta"><a href=""><img src="http://tpl.gco.vn/free-azevent/images/new-1.jpg" class="img-fluid" alt=""></a></div>
-					<h3><a href="">LOREM IPSUM IS SIMPLY DUMMY TEXT OF THE PRINTING AND TYPESETTING INDUSTRY.</a></h3>
-					<div class="desc">
-						Build a brand for your company using a specific color scheme and a professional logo designed with your business in mind. Keep it simple and memorable and use it everywhere. Signs, business cards, web sites, yellow page ads and any printed brochures should include your logo and company colors. Join trade associations and local organizations. […]
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+    <section class="news pt-100 pb-60">
+        <div class="container">
+            <div class="list-new-hot list-new-cate">
+                <div class="row">
+                    <?php  
+                        $args=array(
+                            'post_type' => 'post',
+                            'orderby'   => 'publish_date',
+                            'order'     => 'DESC',
+                            'paged'     => get_query_var('paged') ? get_query_var('paged') : 1,
+                            'posts_per_page' => 8,
+                        ); 
+                        $my_query = new wp_query($args);
+                        $max_num_pages = $my_query->max_num_pages;
+                    ?>
+                    <?php $i = 0; ?>
+                    <?php if ( $my_query->have_posts() ): ?>
+                        <?php while ($my_query->have_posts()):$my_query->the_post(); ?>
+                            <div class="col-md-3">
+                                    <div class="item-new-hot">
+                                        <div class="avarta">
+                                            <a href="<?php echo get_the_permalink() ?>"><img src="<?php echo get_the_post_thumbnail_url() ?>" class="img-fluid w-100" alt=""></a>
+                                            <div class="date text-uppercase"><?php echo get_the_date( $d = 'd/m/yy' ) ?></div>
+                                        </div>
+                                        <div class="info">
+                                            <h3><a href="<?php echo get_the_permalink() ?>"><?php echo get_the_title(); ?></a></h3>
+                                            <ul class="list-inline">
+                                                <li class="list-inline-item"><img src="<?php echo __BASE_URL__ ?>/images/cate.svg" class="img-fluid" alt=""><span>Tin tức</span></li>
+                                                <li class="list-inline-item"><img src="<?php echo __BASE_URL__ ?>/images/comment.svg" class="img-fluid" alt=""><span>3 Comments</span></li>
+                                            </ul>
+                                            <div class="desc">
+                                                <?php echo get_the_excerpt(); ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                        <?php endwhile ?>
+                    <?php endif;wp_reset_query(); ?>
+                </div>
+               <!--  <div class="pagination w-100">
+                    <ul class="list-inline w-100 text-center">
+                        <?php paginationCustom($max_num_pages) ?>
+                    </ul>
+                </div> -->
+            </div>
+        </div>
+    </section>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
 
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-				new_demo_posted_on();
-				new_demo_posted_by();
-				?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
-	</header><!-- .entry-header -->
-
-	<?php new_demo_post_thumbnail(); ?>
-
-	<div class="entry-content">
-		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'new-demo' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				wp_kses_post( get_the_title() )
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'new-demo' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php new_demo_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-<?php the_ID(); ?> -->
-</main>
-<?php get_footer() ?> 
+<?php get_footer() ?>

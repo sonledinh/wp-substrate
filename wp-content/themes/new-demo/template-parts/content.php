@@ -27,7 +27,7 @@
 				?> 
 			</div><!-- .entry-meta -->
 		<?php endif; ?>
-	</header><!-- .entry-header -->
+	</header><!-- .entry-header --> 
 
 	<?php new_demo_post_thumbnail(); ?>
 
@@ -61,3 +61,4 @@
 		<?php new_demo_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 </article><!-- #post-<?php the_ID(); ?> -->
+ 
